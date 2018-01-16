@@ -1,18 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('demo') {
-      parallel {
-        stage('demo') {
-          steps {
-            echo 'This is Demo'
-          }
-        }
-        stage('Build') {
-          steps {
-            build 'Android'
-          }
-        }
+    stage('SCM') {
+      steps {
+        echo 'This is Demo'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh '#send msg'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh '#Test msg'
       }
     }
   }
