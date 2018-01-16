@@ -8,12 +8,20 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh '#send msg'
+        sh '''#run python script to get updated configurations
+cd app
+chmod -R 777 .
+./autoGenerateConfiguration.py
+cd ..
+
+#run build
+chmod -R 777 .
+ ./gradlew clean assembleQARelease --stacktrace'''
       }
     }
     stage('Test') {
       steps {
-        sh '#Test msg'
+        sh './gradlew cleanTest test jacocoTestReport --continue --info'
       }
     }
   }
