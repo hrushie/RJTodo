@@ -16,12 +16,8 @@ cd ..
 
 #run build
 chmod -R 777 .
- ./gradlew clean assembleQARelease --stacktrace'''
-      }
-    }
-    stage('Test') {
-      steps {
-        sh './gradlew cleanTest test jacocoTestReport --continue --info'
+ ./gradlew clean assembleDEVDebug --stacktrace
+ '''
       }
     }
   }
