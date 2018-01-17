@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''#run build
 chmod -R 777 .
- ./gradlew clean assemble --stacktrace
+./gradlew clean assemble --stacktrace
  '''
       }
     }
