@@ -4,7 +4,7 @@ pipeline {
     stage('SCM') {
       steps {
         echo 'This is Demo'
-        git(url: 'git@github.com:hrushie/RJTodo', branch: 'jenkins', poll: true, credentialsId: 'hrushie')
+        git(url: 'git@github.com:hrushie/RJTodo', branch: 'jenkins', poll: true, credentialsId: 'e6a8c2f5-1b23-4d61-8e1d-8ba3a4475b5c')
       }
     }
     stage('Build') {
