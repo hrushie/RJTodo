@@ -8,15 +8,9 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh '''#run python script to get updated configurations
-cd app
+        sh '''#run build
 chmod -R 777 .
-./autoGenerateConfiguration.py
-cd ..
-
-#run build
-chmod -R 777 .
- ./gradlew clean assembleDEVDebug --stacktrace
+ ./gradlew clean assemble --stacktrace
  '''
       }
     }
