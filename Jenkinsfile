@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh '''export ANDROID_HOME=/foo/bar/sdk
+        sh '''
 #run build
 chmod -R 777 .
 ./gradlew clean assemble --stacktrace
