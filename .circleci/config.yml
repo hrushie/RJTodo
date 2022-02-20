@@ -24,7 +24,7 @@ jobs:
       - checkout
       - run: |
             ls
-            ./gradlew tasks
+            chmod +x ./gradlew tasks
           
 
 
