@@ -31,7 +31,6 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
       - say-bye
   say-bye-workflow:
     jobs:
