@@ -22,9 +22,11 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-      - run:
-          name: "Say Bye"
-          command: "echo Bye, World!"
+      - run: |
+            ls
+            gradlew tasks
+          
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -32,6 +34,3 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-bye
-  say-bye-workflow:
-    jobs:
-      - say-hello
